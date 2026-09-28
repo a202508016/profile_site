@@ -3,11 +3,9 @@ const path = require('path');
 const app = express();
 const PORT = 3000;
 
-// EJS 뷰 엔진 설정
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-// 메인 페이지 라우트
 app.get('/', (req, res) => {
     const myProfile = {
         name: "이한율",
@@ -20,7 +18,6 @@ app.get('/', (req, res) => {
     res.render('index', { profile: myProfile });
 });
 
-// 서버 실행
 app.listen(PORT, () => {
     console.log(`서버가 실행되었습니다: http://localhost:${PORT}`);
 });
